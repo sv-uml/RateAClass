@@ -1,0 +1,65 @@
+<div class="page-header">
+	 	 <h3>
+	 	   <a ng-show="post.link" href="{{post.link}}">
+   				{{post.title}}
+   			</a>
+   			<span ng-hide="post.link">
+   				{{post.title}}
+   			</span>
+	 	 </h3>
+	 	</div>
+		<!-- error message if any -->
+  		<div ng-show="error" class="alert alert-danger row">
+  			<span>{{ error.message }}</span>
+  		</div>
+
+  		<!-- Post View for Edit -->
+  	
+		
+	
+	    <div ng-hide="editorEnabled">
+	      <span style="font-size:30px; margin-left:10px;">
+	        {{post.link}}
+	      </span>
+	      <a href="#" ng-click="enableEditor()">Edit</a>
+	    </div>
+	    <div ng-show="editorEnabled">
+	      <span style="font-size:30px; margin-left:10px;">
+	        <input  ng-show="editorEnabled" ng-model="link" ></input>
+	   	  </span>
+	      <a href="#" ng-click="save()">Save</a>
+	      or
+	      <a href="#" ng-click="disableEditor()">cancel</a>.
+	    </div>
+	
+
+	   	
+	   	<!-- list of comments -->
+	 	<div ng-repeat="comment in post.comments | orderBy:'-upvotes'">
+	 	   <span class="glyphicon glyphicon-thumbs-up" 
+	 	       ng-click="incrementUpvotes(comment)"></span>
+	 	   <span class="glyphicon glyphicon-thumbs-down" 
+	 	       ng-click="downVote(comment)"></span>
+	 	       {{comment.upvotes}} - by {{comment.author}}
+	 	       <span style="font-size:20px; margin-left:10px;">
+	 	       		{{comment.body}}
+	 	       </span>
+	 	       <!-- delete comment -->
+		   		<span class="glyphicon glyphicon-remove"
+		   		 ng-click="deleteComment(comment)"></span>
+
+	 	 </div>      
+		 <div ng-hide="isLoggedIn()">
+	   		<h3>You need to <a href="/#/login">Log In</a> or <a href="/#/register">Register</a> before you can add a post.</h3>
+	   	</div>
+
+	   	<!-- New Comment Form -->
+	 	 <form ng-submit="addComment()" ng-show="isLoggedIn" style="margin-top:30px;">
+	 	 	<h3>Add a new comment</h3>
+
+	 	 	<div class="form-group">
+	 	 		<input type="text" class="form-control" placeholder="Comment..." ng-model="body"></input>
+	 	 	</div>
+
+	 	 	<button type="submit" class="btn btn-primary">Post</button>
+	 	 </form>
