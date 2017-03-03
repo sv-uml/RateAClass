@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * {
   -webkit-box-sizing : border-box;‌
   -moz-box-sizing : border-box;
@@ -172,3 +173,13 @@ footer {
   div.global-container div.info { padding: 0 20px; }
   div.global-container div.action form.start-box { width: 100%; }
 }
+=======
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+>>>>>>> 25d2d21a65e9a63d1fda8adcc06704a26c965dd9
