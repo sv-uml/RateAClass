@@ -13,8 +13,11 @@
     "express": "~4.14.1",
     "morgan": "~1.7.0",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "mysql": "^2.13.0",
     "sequelize": "^3.30.2",
+=======
+>>>>>>> 25d2d21a65e9a63d1fda8adcc06704a26c965dd9
 =======
 >>>>>>> 25d2d21a65e9a63d1fda8adcc06704a26c965dd9
     "serve-favicon": "~2.3.2"
