@@ -14,14 +14,8 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 var internalRoutes = require('./routes/internal');
 
-=======
->>>>>>> 25d2d21a65e9a63d1fda8adcc06704a26c965dd9
-=======
->>>>>>> 25d2d21a65e9a63d1fda8adcc06704a26c965dd9
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
@@ -31,13 +25,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-<<<<<<< HEAD
-<<<<<<< HEAD
 app.use('/', internalRoutes);
-=======
->>>>>>> 25d2d21a65e9a63d1fda8adcc06704a26c965dd9
-=======
->>>>>>> 25d2d21a65e9a63d1fda8adcc06704a26c965dd9
 app.use('/users', users);
 
 // catch 404 and forward to error handler
