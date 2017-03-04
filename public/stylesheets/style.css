@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 * {
   -webkit-box-sizing : border-box;‌
   -moz-box-sizing : border-box;
@@ -106,7 +104,7 @@ button:hover { background-color: #222224; }
 
 div.error-head { display: block; height: 40px; line-height: 40px; font-size: 15px; background-color: #f7ea51; text-align: center; }
 
-header.header { background-color: #3D3D3F; color: #fff; font-size: 16px; height: 50px; width: 100%; }
+header.header { color: #3D3D3F; font-size: 16px; height: 50px; width: 100%; }
 header.header > div.container { line-height: 48px; }
 
 header.header a {
@@ -120,6 +118,7 @@ header.header .logo {
   font-weight: 600;
   min-width: 120px;
 }
+header.header .logo:hover { color: #98989d; }
 
 header.header .links {
   display: table-cell;
@@ -133,11 +132,11 @@ header.header .links > .section {
 }
 
 header.header .links > .section:hover {
-  background-color: #222224;
+  color: #98989d;
 }
 
-div.global-container { min-height: calc(100% - 120px); margin-top: 25px; width: 100%; }
-div.global-container > div.container > div.content { height: auto; text-align: center; }
+div.global-container { min-height: calc(100% - 92px); width: 100%; }
+div.global-container > div.container > div.content { height: auto; padding-top: 3em; text-align: center; }
 
 div.container { display: block; height: 100%; margin: 0 auto; width: calc(100% - 100px); }
 div.container > div.content { display: block; height: 100%; }
@@ -174,18 +173,3 @@ footer {
   div.global-container div.info { padding: 0 20px; }
   div.global-container div.action form.start-box { width: 100%; }
 }
-=======
-=======
->>>>>>> 25d2d21a65e9a63d1fda8adcc06704a26c965dd9
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-a {
-  color: #00B7FF;
-}
-<<<<<<< HEAD
->>>>>>> 25d2d21a65e9a63d1fda8adcc06704a26c965dd9
-=======
->>>>>>> 25d2d21a65e9a63d1fda8adcc06704a26c965dd9
