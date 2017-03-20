@@ -153,6 +153,8 @@ div.global-container div.container.home div.info > span.description { display: b
 div.global-container div.container.home div.info { text-align: center; }
 div.global-container div.container.home div.action form.start-box { margin: 30px auto; width: 500px; }
 
+div.global-container div.container.search:before { -webkit-filter: blur(20px); filter: blur(20px); background: url('/images/bl-bg.png') no-repeat fixed; background-position-y: 5em; background-size: cover; content: ' '; position: absolute; height: 100%; width: calc(100% - 100px); z-index: -1; }
+
 input[type="text"].header-search { margin-left: 20px; width: calc(100% - 20px); }
 
 div.global-container div.container.login {

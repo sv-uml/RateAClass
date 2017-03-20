@@ -28,8 +28,7 @@
     'postService',
     'mainService',
     '$log',
-    '$compile',
-    function($scope, postService, mainService, $log, $compile) {
+    function($scope, postService, mainService, $log) {
         $scope.current_search = false;
         $scope.search = function() {
             if ($scope.searchschool.length == 0) {
