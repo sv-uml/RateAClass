@@ -11,7 +11,6 @@
 		// save token
 		main.getSchools = function(name) {
 			return $http.get('/schools/' + name).success(function(data) {
-				console.log(data);
 	   			angular.copy(data, main.schools);
 			});
 		};
