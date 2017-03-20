@@ -4,9 +4,10 @@ var app = angular.module('rc', [
 	'rc.controllers.post', 
 	'rc.controllers.auth', 
 	'rc.controllers.nav', 
-	'rc.controllers.main', 
+	'rc.controllers.main',
+	'rc.services.main',
 	'rc.services.post', 
-	'rc.services.auth', 
+	'rc.services.auth',
 	'ui.router']);
 
 app.config([

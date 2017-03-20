@@ -6,8 +6,8 @@
         	<span class="description">Rate a Class allows you to review college courses that you have <br/>taken at an institution.</span>
         </div>
         <div class="action">
-        	<form class="start-box" id="signup" method="POST" action="process">
-        		<input type="text" id="name" name="name" placeholder="Type to search for a school" focused />
+        	<form class="start-box" id="search-school" method="POST" action="process">
+        		<input type="text" ng-model="searchschool" id="searchschool" placeholder="Type to search for a school" ng-change="search()" focused />
         	</form>
         </div>
     </div>
