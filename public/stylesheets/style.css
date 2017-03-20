@@ -52,6 +52,9 @@ body {
   background-color: #fff;
 }
 
+h1 { font-size: 2.5em; margin: 0; }
+h1.light { font-weight: 300; }
+
 h2 { font-weight: 600; }
 h3 { font-weight: 500; }
 h2, h3 { margin: 0 auto; }
@@ -104,7 +107,7 @@ button:hover { background-color: #222224; }
 
 div.error-head { display: block; height: 40px; line-height: 40px; font-size: 15px; background-color: #f7ea51; text-align: center; }
 
-header.header { color: #3D3D3F; font-size: 16px; height: 50px; width: 100%; }
+header.header { background: transparent; color: #3D3D3F; font-size: 16px; height: 50px; width: 100%; }
 header.header > div.container { line-height: 48px; }
 
 header.header a {
@@ -135,20 +138,47 @@ header.header .links > .section:hover {
   color: #98989d;
 }
 
-div.global-container { min-height: calc(100% - 92px); width: 100%; }
-div.global-container > div.container > div.content { height: auto; padding-top: 3em; text-align: center; }
+div.global-container { position: relative; min-height: calc(100% - 112px); height: calc(100% - 112px); width: 100%; }
+div.global-container > div.container.home > div.content { height: auto; padding-top: 5em; text-align: center; }
 
 div.container { display: block; height: 100%; margin: 0 auto; width: calc(100% - 100px); }
 div.container > div.content { display: block; height: 100%; }
 
-div.global-container div.info { padding: 0 100px; width: 100%; }
-div.global-container div.action { min-width: calc(100% - 420px); }
+div.global-container div.container.home div.info { padding: 0 100px; width: 100%; }
+div.global-container div.container.home div.action { min-width: calc(100% - 420px); }
 
-div.global-container div.sub-header { display: block; background: url('/images/sub-header.png') no-repeat; background-size: 500px; height: 95px; margin: 20px auto; margin-bottom: 45px; width: 500px; }
+div.global-container div.container.home div.sub-header { display: block; background: url('/images/sub-header.png') no-repeat; background-size: 500px; height: 95px; margin: 20px auto; margin-bottom: 45px; width: 500px; }
 
-div.global-container div.info > span.description { display: block; font-size: 18px; margin-top: 10px; }
+div.global-container div.container.home div.info > span.description { display: block; font-size: 18px; margin-top: 10px; }
 div.global-container div.container.home div.info { text-align: center; }
-div.global-container div.action form.start-box { margin: 30px auto; width: 500px; }
+div.global-container div.container.home div.action form.start-box { margin: 30px auto; width: 500px; }
+
+input[type="text"].header-search { margin-left: 20px; width: calc(100% - 20px); }
+
+div.global-container div.container.login {
+  display: table;
+  margin-top: -50px;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+div.global-container div.container.login div.content {
+  display: table-cell;
+  min-width: 400px;
+  padding: 20px 50px;
+  padding-top: 70px;
+}
+
+div.global-container div.container.login div.content form { margin-top: 20px; }
+
+div.global-container div.container.login div.side-banner {
+  background: url('/images/01.jpeg') no-repeat;
+  background-size: cover;
+  display: table-cell;
+  padding-top: 50px;
+  width: 100%;
+}
 
 div.input_instruction { display: block; margin-bottom: 20px; }
 div.input_instruction h3 { margin: 0; }
@@ -157,6 +187,7 @@ div.input_instruction input { margin-top: 10px; }
 
 footer {
   display: block;
+  padding: 20px 0;
   text-align: center;
   width: 100%;
 }
