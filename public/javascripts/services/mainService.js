@@ -10,7 +10,7 @@
 		};
 		// save token
 		main.getSchools = function(name) {
-			return $http.get('/schools/' + name).success(function(data) {
+			return $http.get('/search/school/' + name).success(function(data) {
 	   			angular.copy(data, main.schools);
 			});
 		};

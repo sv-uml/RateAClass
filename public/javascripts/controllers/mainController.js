@@ -56,7 +56,7 @@
                 $("div.container.search").html("");
                 mainService.getSchools($scope.searchschool);
                 mainService.schools.forEach(function(item) {
-                    $("div.container.search").append('<div><span>' + item.name + '</span></div>')
+                    $("div.container.search").append('<a class="school-result" href="/schools/' + item.id + '"><div class="info-section"><h2>' + item.name + '</h2><span>' + item.location + '</span></div><div class="link-section"><i class="fa fa-chevron-right"></i></div></a>')
                 });
             }
         }
