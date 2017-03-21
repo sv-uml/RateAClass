@@ -139,7 +139,7 @@ header.header .links > .section:hover {
 }
 
 div.global-container { position: relative; min-height: calc(100% - 112px); height: calc(100% - 112px); width: 100%; }
-div.global-container > div.container.home > div.content { height: auto; padding-top: 5em; text-align: center; }
+div.global-container > div.container.home > div.content { height: auto; margin-bottom: 5em; padding-top: 5em; text-align: center; }
 
 div.container { display: block; height: 100%; margin: 0 auto; width: calc(100% - 100px); }
 div.container > div.content { display: block; height: 100%; }
@@ -152,10 +152,82 @@ div.global-container div.container.home div.sub-header { display: block; backgro
 div.global-container div.container.home div.info > span.description { display: block; font-size: 18px; margin-top: 10px; }
 div.global-container div.container.home div.info { text-align: center; }
 div.global-container div.container.home div.action form.start-box { margin: 30px auto; width: 500px; }
-
-div.global-container div.container.search:before { -webkit-filter: blur(20px); filter: blur(20px); background: url('/images/bl-bg.png') no-repeat fixed; background-position-y: 5em; background-size: cover; content: ' '; position: absolute; height: 100%; width: calc(100% - 100px); z-index: -1; }
+div.global-container div.container.search { padding-top: 10px; }
+div.global-container div.container.search:before { -webkit-filter: blur(20px); filter: blur(20px); background: url('/images/bl-bg.png') no-repeat fixed; background-position-y: 5em; background-size: contain; content: ' '; position: absolute; height: 100%; width: calc(100% - 100px); z-index: -1; }
 
 input[type="text"].header-search { margin-left: 20px; width: calc(100% - 20px); }
+
+a.school-result {
+  color: #333;
+  display: table;
+  padding: 10px 0;
+  text-decoration: none;
+  width: 100%;
+}
+
+a.school-result:hover {
+  background-color: rgba(200, 200, 200, 0.4);
+  margin-left: -50px;
+  margin-right: -50px;
+  padding-left: 50px;
+  padding-right: 50px;
+  width: auto;
+}
+
+a.school-result > div.info-section {
+  display: table-cell;
+  width: 100%;
+}
+
+a.school-result > div.info-section > h2 {
+  display: block;
+}
+
+a.school-result > div.info-section > span {
+  display: block;
+}
+
+a.school-result > div.link-section {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100px;
+}
+
+a.school-result > div.link-section > a {
+  display: block;
+}
+
+div.infographic-home {
+  border-top: 1px solid #eee;
+  display: table;
+  margin: 0 auto;
+  width: 550px;
+  padding-top: 2em;
+}
+
+div.infographic-home > div.infographic-section {
+  display: table-cell;
+}
+
+div.infographic-home > div.infographic-section > span.head {
+  border: 1px solid #333;
+  border-radius: 100%;
+  display: block;
+  font-weight: 300;
+  height: 30px;
+  line-height: 27px;
+  margin: 0 auto;
+  text-align: center;
+  width: 30px;
+}
+
+div.infographic-home > div.infographic-section > span.body {
+  display: block;
+  margin: 0 auto;
+  margin-top: 5px;
+  text-align: center;
+  width: 140px;
+}
 
 div.global-container div.container.login {
   display: table;
