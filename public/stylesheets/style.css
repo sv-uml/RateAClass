@@ -155,6 +155,8 @@ div.global-container div.container.home div.action form.start-box { margin: 30px
 div.global-container div.container.search { padding-top: 10px; }
 div.global-container div.container.search:before { -webkit-filter: blur(20px); filter: blur(20px); background: url('/images/bl-bg.png') no-repeat fixed; background-position-y: 5em; background-size: contain; content: ' '; position: absolute; height: 100%; width: calc(100% - 100px); z-index: -1; }
 
+div.global-container div.container.school { background-color: #eee; }
+
 input[type="text"].header-search { margin-left: 20px; width: calc(100% - 20px); }
 
 a.school-result {
@@ -274,7 +276,7 @@ footer {
     background: #FFFFFF;
 }
 
-@media (max-width: 600px) { 
+@media (max-width: 600px) {
   div.global-container div.info { padding: 0 20px; }
   div.global-container div.action form.start-box { width: 100%; }
 }

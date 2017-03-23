@@ -3,6 +3,7 @@
 var app = angular.module('rc', [
 	'rc.controllers.post', 
 	'rc.controllers.auth', 
+	'rc.controllers.school',
 	'rc.controllers.nav', 
 	'rc.controllers.main',
 	'rc.services.main',
@@ -12,8 +13,10 @@ var app = angular.module('rc', [
 
 app.config([
 	'$stateProvider', 
-	'$urlRouterProvider', 
-	function($stateProvider, $urlRouterProvider) {
+	'$urlRouterProvider',
+	'$locationProvider', 
+	function($stateProvider, $urlRouterProvider, $locationProvider) {
+		$locationProvider.html5Mode(true);
 		$stateProvider.state('root', {
 			abstract: true, 
 			views: {
