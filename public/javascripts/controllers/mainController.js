@@ -6,7 +6,6 @@
     app.config([
     '$stateProvider', 
     function($stateProvider) {
-
         $stateProvider.state('home', {
             parent: "root",
             url: '/home', 
@@ -27,8 +26,9 @@
     '$scope', 
     'postService',
     'mainService',
+    '$compile',
     '$log',
-    function($scope, postService, mainService, $log) {
+    function($scope, postService, mainService, $compile, $log) {
         $scope.current_search = false;
         $scope.search = function() {
             if ($scope.searchschool.length == 0) {
@@ -45,8 +45,9 @@
                     $("#searchschool").detach().prependTo(header_links).focus();
                     $("#searchschool").addClass("header-search");
 
+
                     var gc = angular.element(document.querySelector('.global-container'));
-                    gc.prepend(angular.element('<div class="container search"></div>'));
+                    angular.element(document).find(".global-container").prepend(angular.element('<div class="container search"></div>'));
                     $("div.container.home").hide();
 
                     $scope.current_search = true;
@@ -56,7 +57,7 @@
                 $("div.container.search").html("");
                 mainService.getSchools($scope.searchschool);
                 mainService.schools.forEach(function(item) {
-                    $("div.container.search").append('<a class="school-result" href="/schools/' + item.id + '"><div class="info-section"><h2>' + item.name + '</h2><span>' + item.location + '</span></div><div class="link-section"><i class="fa fa-chevron-right"></i></div></a>')
+                    angular.element(document).find("div.container.search").append($compile('<a class="school-result" ui-sref="school({unique:' + item.unique + '})"><div class="info-section"><h2>' + item.name + '</h2><span>' + item.location + '</span></div><div class="link-section"><i class="fa fa-chevron-right"></i></div></a>')($scope));
                 });
             }
         }

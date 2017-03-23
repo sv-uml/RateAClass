@@ -12,13 +12,17 @@ module.exports = function(sequelize, DataTypes) {
             field: 'name'
         },
         location: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(255),
             field: 'location'
+        },
+        unique: {
+            type: DataTypes.STRING(255),
+            field: 'unique_str'
         }
     },
     {
         timestamps: false,
-        tableName: 'schools',
+        tableName: 'school',
     });
     return School;
 };

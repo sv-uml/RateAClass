@@ -3,7 +3,7 @@
 var fs        = require("fs");
 var path      = require("path");
 var Sequelize = require("sequelize");
-var sequelize = new Sequelize('rateclass', 'root', 'pass', {
+var sequelize = new Sequelize('rateclass', 'rateclass', 'qwerty123', {
   host: "localhost",
   port: 3306,
   dialectOptions: {
