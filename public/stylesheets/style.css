@@ -48,9 +48,7 @@ body, html {
   width: 100%;
 }
 
-body {
-  background-color: #fff;
-}
+body.school_body { background-color: #F5F8F9; }
 
 h1 { font-size: 2.5em; margin: 0; }
 h1.light { font-weight: 300; }
@@ -109,6 +107,13 @@ div.error-head { display: block; height: 40px; line-height: 40px; font-size: 15p
 
 header.header { background: transparent; color: #3D3D3F; font-size: 16px; height: 50px; width: 100%; }
 header.header > div.container { line-height: 48px; }
+body.school_body header.header { background-color: #fff; border-bottom: 1px solid #ddd; -webkit-box-shadow: 0px 3px 5px 0px rgba(238,238,238,0.5); -moz-box-shadow: 0px 3px 5px 0px rgba(238,238,238,0.5); box-shadow: 0px 3px 5px 0px rgba(238,238,238,0.5); }
+body.login_body > header.header { position: absolute; }
+body.login_body div.global-container { height: 100%; margin-top: -50px; }
+body.login_body div.global-container > div.container { height: 100%; margin-top: 0; }
+body.login_body footer { margin-top: -62px; }
+
+header.header .links input.search-global { background: url('/images/icon-search.png') no-repeat; background-position: 0 center; background-size: 26px; border-color: #ddd; display: inline-block; padding-left: 30px; width: 130px; }
 
 header.header a {
   color: inherit;
@@ -155,7 +160,19 @@ div.global-container div.container.home div.action form.start-box { margin: 30px
 div.global-container div.container.search { padding-top: 10px; }
 div.global-container div.container.search:before { -webkit-filter: blur(20px); filter: blur(20px); background: url('/images/bl-bg.png') no-repeat fixed; background-position-y: 5em; background-size: contain; content: ' '; position: absolute; height: 100%; width: calc(100% - 100px); z-index: -1; }
 
-div.global-container div.container.school { background-color: #eee; }
+div.global-container div.container.school div.school-container { display: flex; margin-top: 20px; width: 100%; }
+div.global-container div.container.school div.school-container > div.side-bar { min-width: 250px; padding: 10px; }
+div.global-container div.container.school div.school-container > div.content-bar { margin: 0 10px; width: 100%; }
+div.global-container div.container.school div.school-container > div.side-bar, div.global-container div.container.school div.school-container > div.content-bar { align-self: flex-start; background-color: #fff;  border: 1px solid rgba(240,240,240,1); padding: 10px; -webkit-box-shadow: 0px 0px 5px 0px rgba(221,235,240,0.75); -moz-box-shadow: 0px 0px 5px 0px rgba(221,235,240,0.75); box-shadow: 0px 0px 5px 0px rgba(221,235,240,0.75); }
+div.global-container div.container.school div.school-container > div.side-bar div.school-brand { background-repeat: no-repeat; background-position: center; background-size: contain; border: 5px solid rgba(90, 129, 142, 0.78); border-radius: 100%; height: 100px; width: 100px; margin: 0 auto; }
+div.global-container div.container.school div.school-container > div.side-bar span.school-title { display: block; font-weight: 500; margin-top: 10px; text-align: center; }
+div.global-container div.container.school div.school-container > div.side-bar span.school-address { display: block; font-weight: 300; margin-top: 10px; text-align: center; }
+
+div.class-container { border-bottom: 1px solid #eee; display: block; padding: 15px 0; }
+div.class-container:nth-of-type(1) { padding-top: 0; }
+div.class-container > span.class-list-head, div.class-container > span.class-list-body { display: block;}
+div.class-container > span.class-list-head { font-size: 1.2em; font-weight: 600; }
+div.class-container > span.class-list-body { font-size: 1em; font-weight: 300; }
 
 input[type="text"].header-search { margin-left: 20px; width: calc(100% - 20px); }
 
@@ -279,4 +296,8 @@ footer {
 @media (max-width: 600px) {
   div.global-container div.info { padding: 0 20px; }
   div.global-container div.action form.start-box { width: 100%; }
+}
+
+body.schoolBody {
+  background: black;
 }

@@ -30,6 +30,7 @@
     '$log',
     function($scope, postService, mainService, $compile, $log) {
         $scope.current_search = false;
+        $scope.rootPage = true;
         $scope.search = function() {
             if ($scope.searchschool.length == 0) {
                 $("#searchschool").detach().prependTo($("form#search-school"));
@@ -57,7 +58,7 @@
                 $("div.container.search").html("");
                 mainService.getSchools($scope.searchschool);
                 mainService.schools.forEach(function(item) {
-                    angular.element(document).find("div.container.search").append($compile('<a class="school-result" ui-sref="school({unique:' + item.unique + '})"><div class="info-section"><h2>' + item.name + '</h2><span>' + item.location + '</span></div><div class="link-section"><i class="fa fa-chevron-right"></i></div></a>')($scope));
+                    angular.element(document).find("div.container.search").append($compile('<a class="school-result" href="/school/' + item.unique + '"><div class="info-section"><h2>' + item.name + '</h2><span>' + item.location + '</span></div><div class="link-section"><i class="fa fa-chevron-right"></i></div></a>')($scope));
                 });
             }
         }

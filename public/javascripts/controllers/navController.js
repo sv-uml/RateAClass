@@ -5,11 +5,13 @@
 		
 	app.controller('NavCtrl', [
 		'$scope',
-		'authService', 
-		function($scope, authService){
+		'authService',
+		'$state',
+		function($scope, authService, $state){
 			$scope.isLoggedIn = authService.isLoggedIn;
 			$scope.currentUser = authService.currentUser;
 			$scope.logOut = authService.logOut;
+			$scope.rootPage = $state.is('home');
 		}]
 	);
 })();

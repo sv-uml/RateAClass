@@ -13,14 +13,28 @@
 				   	 templateUrl: 'internal/school', 
 					 controller: 'SchoolCtrl'
 				   }
-				}
+				},   
+                resolve: {
+                    getSchoolPromise: ['mainService', '$stateParams', function(mainService, $stateParams) {
+                        return mainService.getSchool($stateParams.unique);
+                    }],
+                    getClassPromise: ['mainService', '$stateParams', function(mainService, $stateParams) {
+                        return mainService.getClasses($stateParams.unique, "all");
+                    }]
+                }
 			});
-	}]);
-app.controller('SchoolCtrl', [
-	'$scope', 
-	'$state', 
-	'$stateParams',
-	function($scope,  $state, $stateParams) {
-		console.log($stateParams);
-	}]);
+		}
+	]);
+	app.controller('SchoolCtrl', [
+		'$scope',
+		'$rootScope',
+		'mainService',
+		function($scope, $rootScope, mainService) {
+			$rootScope.appBodyClass = 'school_body';
+			$scope.brand_asset = "/images/schools/" + mainService.school.unique + ".png";
+			$scope.school_name = mainService.school.name;
+			$scope.school_address = mainService.school.location;
+			$scope.classes = mainService.classes;
+		}
+	]);
 })();

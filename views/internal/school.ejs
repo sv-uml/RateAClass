@@ -1,28 +1,19 @@
 <div class="container school">
     <div class="content">
-    	<div class="intro"></div>
-        <div class="info">
-        	<h1>Your opinion matters</h1>
-        	<span class="description">Rate a Class allows you to review college courses that you have <br/>taken at an institution.</span>
-        </div>
-        <div class="action">
-        	<form class="start-box" id="search-school" method="POST" action="process">
-        		<input type="text" ng-model="searchschool" id="searchschool" placeholder="Type to search for a school" ng-change="search()" focused />
-        	</form>
-        </div>
-    </div>
-    <div class="infographic-home">
-        <div class="infographic-section">
-            <span class="head">1</span>
-            <span class="body">Search for your school</span>
-        </div>
-        <div class="infographic-section">
-            <span class="head">2</span>
-            <span class="body">Find your class</span>
-        </div>
-        <div class="infographic-section">
-            <span class="head">3</span>
-            <span class="body">Submit your review</span>
+        <div class="school-container">
+            <div class="side-bar">
+            	<div class="school-brand" style="background-image: url({{brand_asset}})"></div>
+            	<span class="school-title">{{school_name}}</span>
+            	<span class="school-address">{{school_address}}</span>
+            </div>
+            <div class="content-bar">
+            	<input type="text" ng-model="searchclass" id="searchclass" placeholder="Find school" ng-change="search()" focused />
+            	<div class="class-container" ng-repeat="class in classes">
+            		<span class="class-list-head">{{class.name}}</span>
+            		<span class="class-list-description">{{class.description}}</span>
+            	</div>
+            </div>
+            <div class="side-bar">Top Courses</div>
         </div>
     </div>
 </div>
