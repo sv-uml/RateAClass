@@ -14,7 +14,7 @@ var app = angular.module('rc', [
 app.config([
 	'$stateProvider', 
 	'$urlRouterProvider',
-	'$locationProvider', 
+	'$locationProvider',
 	function($stateProvider, $urlRouterProvider, $locationProvider) {
 		$locationProvider.html5Mode(true);
 		$stateProvider.state('root', {
