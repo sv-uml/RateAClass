@@ -3,8 +3,8 @@
 var fs        = require("fs");
 var path      = require("path");
 var Sequelize = require("sequelize");
-var sequelize = new Sequelize('rateclass', 'rateclass', 'qwerty123', {
-  host: "localhost",
+var sequelize = new Sequelize('sql9166445', 'sql9166445', '9mg8VuwRe2', {
+  host: "sql9.freemysqlhosting.net",
   port: 3306,
   dialectOptions: {
     insecureAuth: true
