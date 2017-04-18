@@ -14,11 +14,6 @@
                     templateUrl: 'internal/home', 
                     controller: 'MainCtrl',
                 }
-            },   
-            resolve: {
-                getPostPromise: ['postService', function(postService) {
-                    //return postService.getExcel();
-                }]
             }
         });
     }]);
@@ -28,9 +23,18 @@
     'mainService',
     '$compile',
     '$log',
-    function($scope, postService, mainService, $compile, $log) {
+    '$rootScope',
+    function($scope, postService, mainService, $compile, $log, $rootScope) {
         $scope.current_search = false;
-        $scope.rootPage = true;
+        $rootScope.rootPage = true;
+        $scope.$on('$destroy', function dismissSearch() {
+            $("#searchschool").detach().prependTo($("form#search-school"));
+            $("#searchschool").removeClass("header-search");
+            $rootScope.rootPage = false;
+            console.log($rootScope.rootPage);
+            $("input.search-global").show();
+            $("a.section").show();
+        });
         $scope.search = function() {
             if ($scope.searchschool.length == 0) {
                 $("#searchschool").detach().prependTo($("form#search-school"));
@@ -62,5 +66,9 @@
                 });
             }
         }
+
+        $scope.$on('$destroy', function() {
+            $("#searchschool").detach().prependTo($("form#search-school"));
+        });
     }]);
 })();
