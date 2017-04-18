@@ -2,10 +2,10 @@
 		<div class="container">
 			<a class="logo" href="/" target="_self">Rate a Class</a>
 			<div class="links" id="header-links">
-			    <input type="text" ng-hide="rootPage" class="search-global" ng-model="searchschool_global" id="searchschool_global" placeholder="Find school" ng-change="search()" focused />
-			    <a class="section" ui-sref="login">Sign In</a>
-			    <a class="section" ui-sref="help">FAQ</a>
-				<a class="section" ui-sref="feedback">Feedback</a>
+			    <input type="text" ng-hide="rootPage==true" class="search-global" ng-model="searchschool_global" id="searchschool_global" placeholder="Find school" ng-change="search()" focused />
+			    <a class="section" href="login">Sign In</a>
+			    <a class="section" href="help">FAQ</a>
+				<a class="section" href="feedback">Feedback</a>
 			</div>
 		</div>
 	</header>
