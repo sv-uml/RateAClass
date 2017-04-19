@@ -1,6 +1,6 @@
 * {
-  -webkit-box-sizing : border-box;‌
-  -moz-box-sizing : border-box;
+  -webkit-box-sizing: border-box;‌
+  -moz-box-sizing: border-box;
   box-sizing : border-box;
 }
 
@@ -143,7 +143,9 @@ header.header .links > .section:hover {
   color: #98989d;
 }
 
-div.global-container { position: relative; min-height: calc(100% - 112px); height: calc(100% - 112px); width: 100%; }
+body.login_body header.header .links > .section { color: #FFFFFF; }
+
+div.global-container { position: relative; min-height: calc(100% - 112px); height: calc(100% - 112px); width: 100%; z-index: -1; }
 div.global-container > div.container.home > div.content { height: auto; margin-bottom: 5em; padding-top: 5em; text-align: center; }
 
 div.container { display: block; height: 100%; margin: 0 auto; width: calc(100% - 100px); }

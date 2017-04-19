@@ -7,7 +7,7 @@
             	<span class="school-address">{{school_address}}</span>
             </div>
             <div class="content-bar">
-            	<input type="text" ng-model="searchclass" id="searchclass" placeholder="Find class" ng-change="search()" focused />
+            	<input type="text" ng-model="searchclass" id="searchclass" placeholder="Find a class" ng-change="search()" focused />
             	<div class="class-container" ng-repeat="class in classes | filter:searchclass | limitTo: 20">
             		<span class="class-list-head">{{class.name}}</span>
             		<span class="class-list-description">{{class.description}}</span>
