@@ -105,7 +105,7 @@ button:hover { background-color: #222224; }
 
 div.error-head { display: block; height: 40px; line-height: 40px; font-size: 15px; background-color: #f7ea51; text-align: center; }
 
-header.header { background: transparent; color: #3D3D3F; font-size: 16px; height: 50px; width: 100%; }
+header.header { background: transparent; color: #3D3D3F; font-size: 16px; height: 50px; position: relative; width: 100%; z-index: 1; }
 header.header > div.container { line-height: 48px; }
 body.school_body header.header { background-color: #fff; border-bottom: 1px solid #ddd; -webkit-box-shadow: 0px 3px 5px 0px rgba(238,238,238,0.5); -moz-box-shadow: 0px 3px 5px 0px rgba(238,238,238,0.5); box-shadow: 0px 3px 5px 0px rgba(238,238,238,0.5); }
 body.login_body > header.header { position: absolute; }
@@ -143,9 +143,10 @@ header.header .links > .section:hover {
   color: #98989d;
 }
 
-body.login_body header.header .links > .section { color: #FFFFFF; }
+body.login_body header.header .links > .section { color: #dddddd; }
+body.login_body header.header .search-global { display: none; }
 
-div.global-container { position: relative; min-height: calc(100% - 112px); height: calc(100% - 112px); width: 100%; z-index: -1; }
+div.global-container { position: relative; min-height: calc(100% - 112px); height: calc(100% - 112px); width: 100%; z-index: 0; }
 div.global-container > div.container.home > div.content { height: auto; margin-bottom: 5em; padding-top: 5em; text-align: center; }
 
 div.container { display: block; height: 100%; margin: 0 auto; width: calc(100% - 100px); }
@@ -283,9 +284,12 @@ div.input_instruction input { margin-top: 10px; }
 footer {
   display: block;
   padding: 20px 0;
+  position: relative;
   text-align: center;
   width: 100%;
 }
+
+body.login_body footer { color: #dddddd; }
 
 .invalid input:required:invalid {
     background: #BE4C54;

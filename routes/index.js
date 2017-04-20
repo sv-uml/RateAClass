@@ -1,31 +1,85 @@
 var express = require('express');
-var models  = require('../models');
+var models = require('../models');
 var router = express.Router();
+var passport = require("passport");
+var School = require('../model/School');
+var Class = require('../model/Class');
+var User = require('../model/Users');
 
-router.get('/search/school/:name', function(req, res, next) {
-    var school = req.params.name;
-    models.School.findAll({ where: { name: { $like: '%' + school + '%' } }, limit: 10 }).then(function(schools) {
-        res.json(schools);
-    });
-});
+router.get('/search/school/:name', function (req, res, next) {
+	var school = req.params.name;
 
-router.get('/search/:school/:class', function(req, res, next) {
-	var school = req.params.school;
-	var classes = req.params.class;
-	var query = { where: { school: school}, limit: 10 };
-	if (classes != "all")
-		query = { where: { school: school, name: { $like: '%' + classes + '%' } }, limit: 10 };
-
-	models.Class.findAll(query).then(function(classes) {
-		res.json(classes);
+	School.query(function (q) { 
+		q.where('name', 'LIKE', '%' + school + '%');
+	}).fetchAll().then(function (schools) {
+		console.log(schools.toJSON());
+		res.json(schools);
+	}).catch(function (err) {
+		console.log(err);
+		res.send('An error occured');
 	});
 });
 
-router.get('/school/:unique', function(req, res, next) {
+router.get('/search/:school/:class', function (req, res, next) {
+	var school = req.params.school;
+	var classes = req.params.class;
+	var query = { where: { school: school }, limit: 10 };
+	if (classes != "all")
+		query = { where: { school: school, name: { $like: '%' + classes + '%' } }, limit: 10 };
+
+	Class.query(query).fetchAll().then(function (classes) {
+		res.json(classes);
+	}).catch(function (err) {
+		console.log(err);
+		res.send('An error occured');
+	});
+});
+
+router.get('/school/:unique', function (req, res, next) {
 	var unique = req.params.unique;
-	models.School.find({ where: { unique: unique } }).then(function(schools) {
-        res.json(schools);
-    });
+
+	School.query({ where: { unique_str: unique } }).fetchAll().then(function (schools) {
+		res.json(schools);
+	}).catch(function (err) {
+		console.log(err);
+		res.send('An error occured');
+	});
+
+});
+
+
+router.post("/register", function (req, res, next) {
+	if (!req.body.username || !req.body.password) {
+		return res.status(400).json({ message: "Please fill out all fields" });
+	}
+
+	var user = new User();
+	user.username = req.body.username;
+	user.setPassword(req.body.password);
+
+	user.save(function (err) {
+		if (err) {
+			return next(err);
+		}
+		return res.json({ token: user.generateJWT() });
+	})
+});
+
+router.post("/login", function (req, res, next) {
+	if (!req.body.username || !req.body.password) {
+		return res.status(400).json({ message: "Please fill out all fields" });
+	}
+
+	passport.authenticate("local", function (err, user, info) {
+		if (err) {
+			return next(err);
+		}
+		if (user) {
+			return res.json({ token: user.generateJWT() });
+		} else {
+			return res.status(401).json(info);
+		}
+	})(req, res, next);
 });
 
 module.exports = router;

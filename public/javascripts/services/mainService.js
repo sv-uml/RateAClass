@@ -7,7 +7,7 @@
 		var main = {
 		    data: [],
 		    schools: [],
-		    school: {},
+		    school: [],
 		    classes: []
 		};
 		// save token

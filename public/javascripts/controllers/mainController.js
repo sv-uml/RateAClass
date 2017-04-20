@@ -62,7 +62,7 @@
                 $("div.container.search").html("");
                 mainService.getSchools($scope.searchschool);
                 mainService.schools.forEach(function(item) {
-                    angular.element(document).find("div.container.search").append($compile('<a class="school-result" href="/school/' + item.unique + '"><div class="info-section"><h2>' + item.name + '</h2><span>' + item.location + '</span></div><div class="link-section"><i class="fa fa-chevron-right"></i></div></a>')($scope));
+                    angular.element(document).find("div.container.search").append($compile('<a class="school-result" href="/school/' + item.unique_str + '" target="_self"><div class="info-section"><h2>' + item.name + '</h2><span>' + item.location + '</span></div><div class="link-section"><i class="fa fa-chevron-right"></i></div></a>')($scope));
                 });
             }
         }
