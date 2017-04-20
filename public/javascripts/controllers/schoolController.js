@@ -30,7 +30,6 @@
 		'$rootScope',
 		'mainService',
 		function($scope, $rootScope, mainService) {
-			console.log(mainService.school);
 			$rootScope.appBodyClass = 'school_body';
 			$scope.brand_asset = "/images/schools/" + mainService.school[0].unique_str + ".png";
 			$scope.school_name = mainService.school[0].name;
