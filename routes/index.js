@@ -16,7 +16,6 @@ router.get('/search/school/:name', function (req, res, next) {
 	School.query(function (q) { 
 		q.where('name', 'LIKE', '%' + school + '%');
 	}).fetchAll().then(function (schools) {
-		console.log(schools.toJSON());
 		res.json(schools);
 	}).catch(function (err) {
 		console.log(err);
@@ -94,7 +93,6 @@ router.post('/review/post', auth, function(req, res, next) {
 	} catch (ex) {
 		console.log(ex.stack);
 	}
-	console.log(req.body);
 })
 
 router.post('/auth/register', function(req, res, next) {
@@ -109,7 +107,7 @@ router.post('/auth/register', function(req, res, next) {
 				password: hash
 			}).save();
 		}).then(function (model) {
-			return res.json({token: model.generateJWT(user)});
+			return res.json({token: model.generateJWT({ attributes: {id: model.attributes.id, name: req.body.name}})});
 		}).catch(function(ex) {
 			console.log(ex.stack);
 		});
