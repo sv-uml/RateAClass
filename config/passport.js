@@ -1,11 +1,11 @@
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-var User = require('../models/Users');
+var User = require('../model/Users');
 
 passport.use(new LocalStrategy(
-  function (username, password, done) {
+  function (email, password, done) {
     new User({
-      username: username
+      email: email
     })
     .fetch({ require: true }) //will throw error if there is no record
     .then(function (member) {
@@ -18,7 +18,7 @@ passport.use(new LocalStrategy(
       // we'll either get a 'record not found' from bookshelf or a 'invalid password' from .validatePassword()
       // but we don't want to expose all that, so we'll return a "invalid email OR password error
       console.log(err.stack);
-      done(null, false, 'Invalid username and/or password');
+      done(null, false, 'Invalid email and/or password');
     });
   }
 ))

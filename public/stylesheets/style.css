@@ -108,7 +108,7 @@ div.error-head { display: block; height: 40px; line-height: 40px; font-size: 15p
 header.header { background-color: #fff; border-bottom: 1px solid #ddd; -webkit-box-shadow: 0px 3px 5px 0px rgba(238,238,238,0.5); -moz-box-shadow: 0px 3px 5px 0px rgba(238,238,238,0.5); box-shadow: 0px 3px 5px 0px rgba(238,238,238,0.5); color: #3D3D3F; font-size: 16px; height: 50px; position: relative; width: 100%; z-index: 1; }
 header.header > div.container { line-height: 48px; }
 header.header > div.container { line-height: 48px; }
-body.login_body > header.header { position: absolute; }
+body.login_body header.header { background-color: transparent; border: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; }
 body.login_body div.global-container { height: 100%; margin-top: -50px; }
 body.login_body div.global-container > div.container { height: 100%; margin-top: 0; }
 body.login_body footer { margin-top: -62px; }
@@ -288,6 +288,12 @@ div.global-container div.container.login div.side-banner {
   display: table-cell;
   padding-top: 50px;
   width: 100%;
+}
+
+div.global-container div.container.login span.auth-instruction a {
+  color: #333;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 div.input_instruction { display: block; margin-bottom: 20px; }

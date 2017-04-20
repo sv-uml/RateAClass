@@ -42,13 +42,12 @@ app.controller('AuthCtrl', [
 	'$state', 
 	'authService',
 	function($scope, $rootScope, $state, authService) {
-
 		$scope.user = {};
 		$rootScope.appBodyClass = 'login_body';
-
 		$scope.register = function(){
 			authService.register($scope.user).error(function(error) {
 				$scope.error = error;
+				console.log(error);
 			}).then(function() {
 				$state.go('home');
 			});

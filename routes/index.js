@@ -59,26 +59,30 @@ router.get('/reviews/:course', function (req, res, next) {
 });
 
 
-router.post("/register", function (req, res, next) {
-	if (!req.body.username || !req.body.password) {
-		return res.status(400).json({ message: "Please fill out all fields" });
+router.post('/auth/register', function(req, res, next) {
+	if (!req.body.name || !req.body.email || !req.body.password) {
+		return res.sendStatus(400).json({message: 'Please fill out all fields'});
 	}
-
-	var user = new User();
-	user.username = req.body.username;
-	user.setPassword(req.body.password);
-
-	user.save(function (err) {
-		if (err) {
-			return next(err);
-		}
-		return res.json({ token: user.generateJWT() });
-	})
+	try {
+		User.createPassword(req.body.password).then(function(hash) {
+			return new User({
+				name: req.body.name,
+				email: req.body.email,
+				password: hash
+			}).save();
+		}).then(function (model) {
+			return res.json({token: model.generateJWT(), user: model.toJSON()});
+		}).catch(function(ex) {
+			console.log(ex.stack);
+		});
+	} catch (ex) {
+		console.log(ex.stack);
+	}
 });
 
-router.post("/login", function (req, res, next) {
+router.post("/auth/login", function (req, res, next) {
 	if (!req.body.username || !req.body.password) {
-		return res.status(400).json({ message: "Please fill out all fields" });
+		return res.sendStatus(400).json({ message: "Please fill out all fields" });
 	}
 
 	passport.authenticate("local", function (err, user, info) {
@@ -86,7 +90,7 @@ router.post("/login", function (req, res, next) {
 			return next(err);
 		}
 		if (user) {
-			return res.json({ token: user.generateJWT() });
+			return res.json({ token: user.generateJWT(), user: user.toJSON() });
 		} else {
 			return res.status(401).json(info);
 		}

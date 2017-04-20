@@ -1,26 +1,13 @@
-<div class="page-header">
-	    <h1>Flapper News</h1>
-	    </div>
-
-	    <!-- error message if any -->
-  		<div ng-show="error" class="alert alert-danger row">
-  			<span>{{ error.message }}</span>
-  		</div>
-
-  		<form ng-submit="register()" style="margin-top:30px;">
-  			<h3>Register</h3>
-
-  			<div class="form-group">
-  				<input type="text"
-  				class="form-control"
-  				placeholder="Username"
-  				ng-model="user.username"></input>
-  			</div>
-  			<div class="form-group">
-  				<input type="password"
-  				class="form-control"
-  				placeholder="Password"
-  				ng-model="user.password"></input>
-  			</div>
-  			<button type="submit" class="btn btn-primary">Register</button>
-  		</form>
+<div id="container" class="container login">
+  <div class="content">
+    <h1 class="light">Sign Up</h1>
+    <form ng-submit="register()">
+		<input type="name" ng-model="user.name" placeholder="Name" />
+        <input type="email" ng-model="user.email" placeholder="Email" />
+        <input type="password" ng-model="user.password" placeholder="Password" />
+        <input type="submit" value="Sign Up" />
+    </form>
+    <span class="auth-instruction">Already a member? <a href="/login">Sign In!</a></span>
+  </div>
+  <div class="side-banner"></div>
+</div>

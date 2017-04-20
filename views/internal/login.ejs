@@ -2,11 +2,11 @@
   <div class="content">
     <h1 class="light">Sign In</h1>
     <form ng-submit="logIn()">
-        <input type="email" placeholder="Email" />
-        <input type="password" placeholder="Password" />
+        <input type="email" ng-model="user.username" placeholder="Email" />
+        <input type="password" ng-model="user.password" placeholder="Password" />
         <input type="submit" value="Sign In" />
     </form>
-    <span>Not a member yet? <a>Sign Up!</a></span>
+    <span class="auth-instruction">Not a member yet? <a href="/register">Sign Up!</a></span>
   </div>
   <div class="side-banner"></div>
 </div>

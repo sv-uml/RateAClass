@@ -12,6 +12,7 @@
 		function ($scope, authService, mainService, $compile, $state) {
 			$scope.isLoggedIn = authService.isLoggedIn;
 			$scope.currentUser = authService.currentUser;
+			console.log(authService.currentUserId());
 			$scope.logOut = authService.logOut;
 			$scope.rootPage = $state.is('home');
 			$scope.current_search = false;

@@ -24,6 +24,7 @@ var User = bookshelf.Model.extend({
     var today = new Date();
     var exp = new Date(today);
     exp.setDate(today.getDate() + 60);
+    console.log(this);
 
     return jwt.sign({
       _id: this._id,
