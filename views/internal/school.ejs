@@ -19,6 +19,17 @@
                     <span class="class-rating-head">{{class.name}}</span>
                     <span class="class-rating-number">{{class.rating}}</span>
                 </a>
+            	<div class="class-container" ng-repeat="class in classes | filter:searchclass | limitTo: 20">
+            		<span class="class-list-head">{{class.name}}</span>
+            		<span class="class-list-description">{{class.description}}</span>
+            	</div>
+            </div>
+            <div class="side-bar">
+                <span>Top Courses</span>
+                <div class="class-rating-container" ng-repeat="class in classes | filter:searchclass | limitTo: 20 | orderBy:rating">
+                    <span class="class-rating-head">{{class.name}}</span>
+                    <span class="class-rating-number">{{class.rating}}</span>
+                </div>
             </div>
         </div>
     </div>

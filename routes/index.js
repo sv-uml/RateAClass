@@ -10,6 +10,7 @@ var bookshelf = require('../config/bookshelf');
 
 router.get('/search/school/:name', function (req, res, next) {
 	var school = req.params.name;
+
 	School.query(function (q) { 
 		q.where('name', 'LIKE', '%' + school + '%');
 	}).fetchAll().then(function (schools) {

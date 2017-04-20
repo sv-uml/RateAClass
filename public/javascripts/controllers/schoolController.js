@@ -22,6 +22,7 @@
                         return mainService.getClasses($stateParams.unique, "all");
                     }]
                 }
+<<<<<<< HEAD
 			})
 			.state('review', {
 				parent: 'root',
@@ -37,6 +38,8 @@
                         return mainService.getReviews($stateParams.unique);
                     }]
                 }
+=======
+>>>>>>> 0079426e0b18524e1e769c9bf7bd53691ac9c08d
 			});
 		}
 	]);
@@ -44,6 +47,7 @@
 		'$scope',
 		'$rootScope',
 		'mainService',
+<<<<<<< HEAD
 		'$state',
 		function($scope, $rootScope, mainService, $state) {
 			if ($state.is('review')) {
@@ -63,6 +67,14 @@
 				$scope.school_address = mainService.school[0].location;
 				$scope.classes = mainService.classes;
 			}
+=======
+		function($scope, $rootScope, mainService) {
+			$rootScope.appBodyClass = 'school_body';
+			$scope.brand_asset = "/images/schools/" + mainService.school[0].unique_str + ".png";
+			$scope.school_name = mainService.school[0].name;
+			$scope.school_address = mainService.school[0].location;
+			$scope.classes = mainService.classes;
+>>>>>>> 0079426e0b18524e1e769c9bf7bd53691ac9c08d
 		}
 	]);
 })();

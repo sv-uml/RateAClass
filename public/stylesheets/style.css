@@ -107,6 +107,7 @@ div.error-head { display: block; height: 40px; line-height: 40px; font-size: 15p
 
 header.header { background-color: #fff; border-bottom: 1px solid #ddd; -webkit-box-shadow: 0px 3px 5px 0px rgba(238,238,238,0.5); -moz-box-shadow: 0px 3px 5px 0px rgba(238,238,238,0.5); box-shadow: 0px 3px 5px 0px rgba(238,238,238,0.5); color: #3D3D3F; font-size: 16px; height: 50px; position: relative; width: 100%; z-index: 1; }
 header.header > div.container { line-height: 48px; }
+header.header > div.container { line-height: 48px; }
 body.login_body > header.header { position: absolute; }
 body.login_body div.global-container { height: 100%; margin-top: -50px; }
 body.login_body div.global-container > div.container { height: 100%; margin-top: 0; }
@@ -188,6 +189,29 @@ div.content-bar span.heading { display: block; font-size: 1em; font-weight: 600;
 .class-container > span.class-list-body { font-size: 1em; font-weight: 300; }
 .class-container > span.class-rating-head { font-size: 1em; font-weight: 300; }
 .class-container > span.class-rating-number { font-size: 1em; font-weight: 600; }
+
+div.global-container div.container.school div.school-container { display: flex; margin-top: 20px; width: 100%; }
+div.global-container div.container.school div.school-container > div.side-bar { min-width: 250px; }
+div.global-container div.container.school div.school-container > div.side-bar > span { display: block; font-weight: 700; padding: 10px; }
+div.global-container div.container.school div.school-container > div.content-bar { margin: 0 10px; width: 100%; }
+div.global-container div.container.school div.school-container > div.side-bar, div.global-container div.container.school div.school-container > div.content-bar { align-self: flex-start; background-color: #fff;  border: 1px solid rgba(240,240,240,1); -webkit-box-shadow: 0px 0px 5px 0px rgba(221,235,240,0.75); -moz-box-shadow: 0px 0px 5px 0px rgba(221,235,240,0.75); box-shadow: 0px 0px 5px 0px rgba(221,235,240,0.75); }
+div.global-container div.container.school div.school-container > div.side-bar div.school-brand { background-repeat: no-repeat; background-position: center; background-size: contain; border: 5px solid rgba(90, 129, 142, 0.78); border-radius: 100%; height: 100px; width: 100px; margin: 0 auto; }
+div.global-container div.container.school div.school-container > div.side-bar span.school-title { display: block; font-weight: 500; margin-top: 10px; text-align: center; }
+div.global-container div.container.school div.school-container > div.side-bar span.school-address { display: block; font-weight: 300; margin-top: 10px; text-align: center; }
+
+div.content-bar input.search_class { margin: 10px; width: calc(100% - 20px); }
+
+div.class-container, div.class-rating-container { border-bottom: 1px solid #eee; display: block; padding: 10px; }
+div.class-rating-container { display: table; width: 100%; }
+div.class-rating-container:nth-of-type(1) { padding-top: 0; }
+div.class-rating-container > span.class-rating-head,
+div.class-rating-container > span.class-rating-number { display: table-cell; }
+div.class-container > span.class-list-head, div.class-container > span.class-list-body,
+div.class-container > span.class-rating-head, div.class-container > span.class-rating-number { display: block;}
+div.class-container > span.class-list-head { font-size: 1.2em; font-weight: 600; }
+div.class-container > span.class-list-body { font-size: 1em; font-weight: 300; }
+div.class-container > span.class-rating-head { font-size: 1em; font-weight: 300; }
+div.class-container > span.class-rating-number { font-size: 1em; font-weight: 600; }
 
 input[type="text"].header-search { margin-left: 20px; width: calc(100% - 20px); }
 
