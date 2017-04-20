@@ -9,6 +9,7 @@
 		    schools: [],
 		    school: [],
 		    classes: [],
+			classItem: {},
 			reviews: []
 		};
 		// save token
@@ -33,7 +34,23 @@
 		main.getReviews = function(unique) {
 			return $http.get('/api/reviews/' + unique).success(function(data) {
 				angular.copy(data, main.reviews);
-			})
+			});
+		}
+
+		main.getClass = function(unique) {
+			return $http.get('/api/class/' + unique).success(function(data) {
+				main.classItem = data;
+			});
+		}
+
+		main.postReview = function(obj, token) {
+			return $http.post('/api/review/post', obj, {
+				headers: {
+					Authorization: "Bearer " + token
+				}
+			}).success(function(data) {
+				main.classItem = data;
+			});
 		}
 		return main;
 	}]);

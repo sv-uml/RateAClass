@@ -1,0 +1,21 @@
+<div id="container" class="container addreview">
+    <div class="content">
+        <div class="school-container">
+            <div class="content-bar">
+            	<h2 class="heading"><span>Add a review for</span> {{class_obj.name}}</h2>
+                <div class="class-description">{{class_obj.description}}</div>
+            	<div class="add-review-instructions">
+                    <span>To submit a review, simply write your content in the text box below and give a star-based rating.</span>
+                </div>
+                <form ng-submit="submitAddReview()">
+                    <div class="review-text"><textarea ng-model="review.text" placeholder="Write a review" /></div>
+                    <div class="star-rating-container">
+                        <span>Star rating: </span>
+                        <rating value="rating_num" max="5" interactive="true" ng-model="review.rating_num"></rating>
+                    </div>
+                    <input type="submit" class="button" value="Submit review" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

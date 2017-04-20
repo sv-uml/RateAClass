@@ -19,18 +19,17 @@ var User = bookshelf.Model.extend({
       });
     });
   },
-  generateJWT: function() {
+  generateJWT: function(user) {
     // set expiration to 60 days
     var today = new Date();
     var exp = new Date(today);
     exp.setDate(today.getDate() + 60);
-    console.log(this);
 
     return jwt.sign({
-      _id: this._id,
-      email: this.email,
+      _id: user.id,
+      name: user.attributes.name,
       exp: parseInt(exp.getTime() / 1000),
-    }, 'SECRET');
+    }, '0010');
   }
 }, {
   createPassword: function (password) {

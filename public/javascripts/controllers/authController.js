@@ -41,7 +41,8 @@ app.controller('AuthCtrl', [
 	'$rootScope',
 	'$state', 
 	'authService',
-	function($scope, $rootScope, $state, authService) {
+	'$window',
+	function($scope, $rootScope, $state, authService, $window) {
 		$scope.user = {};
 		$rootScope.appBodyClass = 'login_body';
 		$scope.register = function(){
@@ -49,14 +50,14 @@ app.controller('AuthCtrl', [
 				$scope.error = error;
 				console.log(error);
 			}).then(function() {
-				$state.go('home');
+				$window.location.href = "/home";
 			});
 		};
 		$scope.logIn = function(comment) {
 			authService.logIn($scope.user).error(function(error){
 				$scope.error = error;
 			}).then(function(){
-				$state.go('home');
+				$window.location.href = "/home";
 			});
 		};
 	}]);

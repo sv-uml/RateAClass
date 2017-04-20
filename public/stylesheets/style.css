@@ -57,7 +57,7 @@ h2 { font-weight: 600; }
 h3 { font-weight: 500; }
 h2, h3 { margin: 0 auto; }
 
-a.button {
+.button {
   background-color: #0069ff;
   border: 1px solid #0049B3;
   color: #fff;
@@ -67,8 +67,8 @@ a.button {
   padding: 10px;
   text-decoration: none;
 }
-a.button.wide { padding: 10px 20px; }
-a.button:hover { background-color: #0049B3; }
+.button.wide { padding: 10px 20px; }
+.button:hover { background-color: #0049B3; }
 
 input {
   border: 1px solid #888888;
@@ -171,14 +171,32 @@ div.global-container div.container div.school-container > div.content-bar { marg
 div.global-container div.container div.school-container > div.side-bar, div.global-container div.container div.school-container > div.content-bar { align-self: flex-start; background-color: #fff;  border: 1px solid rgba(240,240,240,1); -webkit-box-shadow: 0px 0px 5px 0px rgba(221,235,240,0.75); -moz-box-shadow: 0px 0px 5px 0px rgba(221,235,240,0.75); box-shadow: 0px 0px 5px 0px rgba(221,235,240,0.75); }
 div.global-container div.container div.school-container > div.side-bar div.school-brand { background-repeat: no-repeat; background-position: center; background-size: contain; border: 5px solid rgba(90, 129, 142, 0.78); border-radius: 100%; height: 100px; margin: 0 auto; margin-top: 10px; width: 100px; }
 div.global-container div.container div.school-container > div.side-bar span.school-title { display: block; font-weight: 500; margin-top: 10px; text-align: center; }
-div.global-container div.container div.school-container > div.side-bar span.school-address { display: block; font-weight: 300; margin-top: 10px; text-align: center; }
+div.global-container div.container div.school-container > div.side-bar span.school-address { display: block; font-weight: 300; padding-top: 0; text-align: center; }
 div.global-container div.container div.school-container > div.side-bar a.school-reviews { display: block; color: #333; font-weight: 500; margin: 10px 0; text-align: center; text-decoration: none; }
+div.global-container div.container div.school-container > div.side-bar a.button { background: transparent; border-color: #333; color: #333; display: block; margin: 10px auto; margin-top: 20px; width: 135px; }
+div.global-container div.container div.school-container > div.side-bar a.button:hover { background: #eaeaea; }
 
 div.content-bar input.search_class { margin: 10px; width: calc(100% - 20px); }
-div.content-bar span.heading { display: block; font-size: 1em; font-weight: 600; padding: 10px; }
+div.content-bar .heading { display: block; font-size: 1em; font-weight: 600; padding: 10px; }
+div.content-bar .heading > span { font-weight: 300; }
+div.addreview div.content-bar { padding: 10px; }
+div.addreview div.content-bar .heading { font-size: 1.5em; padding: 0; }
+div.addreview div.content-bar .class-description { border-bottom: 1px solid #eee; font-size: 0.9em; margin-top: 5px; padding-bottom: 15px; }
+div.addreview div.content-bar .add-review-instructions { display: block; padding: 15px 0; }
+div.addreview div.content-bar .review-text textarea { border: 1px solid #666; border-radius: 3px; display: block; font-size: 1em; min-height: 100px; outline: none; padding: 5px; resize: none; width: 100%; }
+div.addreview div.content-bar .star-rating-container { display: table; padding: 15px 0; width: 100%; }
+div.addreview div.content-bar .star-rating-container > span { display: table-cell; width: 90px; }
+div.addreview div.content-bar .star-rating-container > rating { text-align: left; }
+div.addreview div.content-bar form .button { width: auto; }
+
+div.addreview div.content-bar .star-rating-container > rating .star:hover {
+  color: #F7EB90;
+}
 
 .class-container, .class-rating-container, .review-container { border-bottom: 1px solid #eee; color: #333; display: block; padding: 10px; text-decoration: none; }
 .class-container:hover, .class-rating-container:hover, .review-container:hover { background-color: #eee; }
+.review-container { padding-top: 15px; padding-bottom: 15px; }
+.review-container.userReview { background-color: rgba(202, 240, 255, 0.7); }
 .class-rating-container { display: table; width: 100%; }
 .class-rating-container:nth-of-type(1) { padding-top: 0; }
 .class-rating-container > span.class-rating-head,
@@ -186,6 +204,9 @@ div.content-bar span.heading { display: block; font-size: 1em; font-weight: 600;
 .class-container > span.class-list-head, .class-container > span.class-list-body,
 .class-container > span.class-rating-head, .class-container > span.class-rating-number,
 .review-container > span.review-list-head, .review-container > span.review-list-body { display: block;}
+.review-container > div.review-info-container { border-top: 1px solid #eee; color: #666; display: table; font-size: 0.8em; margin-top: 15px; padding-top: 10px; width: 100%; }
+.review-container > div.review-info-container > span.usr { display: table-cell; }
+.review-container > div.review-info-container > span.datetime { display: table-cell; text-align: right; }
 .class-container > span.class-list-head { font-size: 1.2em; font-weight: 600; }
 .class-container > span.class-list-body { font-size: 1em; font-weight: 300; }
 .class-container > span.class-rating-head { font-size: 1em; font-weight: 300; }
@@ -294,6 +315,12 @@ div.global-container div.container.login span.auth-instruction a {
   color: #333;
   font-weight: bold;
   text-decoration: none;
+}
+
+div.global-container div.container.login span.auth-warning {
+  color: #D20000;
+  display: block;
+  margin: 5px 0;
 }
 
 div.input_instruction { display: block; margin-bottom: 20px; }

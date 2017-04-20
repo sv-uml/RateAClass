@@ -6,12 +6,16 @@
             	<span class="school-title">{{school_name}}</span>
             	<span class="school-address">{{school_address}}</span>
                 <a class="school-reviews" href="/school/{{school_str}}"><i class="fa fa-arrow-left"></i> Back to all reviews</a>
+                <a class="button" href="/review/{{class_id}}/add"><i class="fa fa-plus"></i> Add a review</a>
             </div>
             <div class="content-bar">
             	<span class="heading">Reviews for {{reviewClass}}</span>
-            	<div class="review-container" ng-repeat="review in reviews | limitTo: 20">
-            		<span class="review-list-head">Posted on {{review.datetime}}</span>
-            		<span class="review-list-description">{{review.review}}</span>
+            	<div class="review-container" ng-class="review.usr==user_id?'userReview':''" ng-repeat="review in reviews | limitTo: 20 | orderBy: review.datetime : true">
+            		<span class="review-list-body">{{review.review}}</span>
+                    <div class="review-info-container">
+                        <span class="usr">{{review.username}}</span>
+                        <span class="datetime" am-time-ago="review.datetime | amFromUnix"></span>
+                    </div>
             	</div>
             </div>
         </div>

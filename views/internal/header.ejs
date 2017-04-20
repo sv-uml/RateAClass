@@ -4,9 +4,8 @@
 			<div class="links" id="header-links">
 			    <input type="text" ng-hide="rootPage==true" class="search-global" ng-model="searchschool_global" id="searchschool_global" placeholder="Find school" ng-change="search()" focused />
 			    <a class="section" ng-show="isLoggedIn()">{{currentUser}}</a>
+				<a class="section" ng-show="isLoggedIn()" ng-click="logOut()">Sign Out</a>
 				<a class="section" ui-sref="login" ui-sref-opts="{reload: true}" ng-hide="isLoggedIn()">Sign In</a>
-			    <a class="section" ui-sref="help" ui-sref-opts="{reload: true}">FAQ</a>
-				<a class="section" ui-sref="feedback" ui-sref-opts="{reload: true}">Feedback</a>
 			</div>
 		</div>
 	</header>
