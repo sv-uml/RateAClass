@@ -109,7 +109,7 @@ router.post('/auth/register', function(req, res, next) {
 				password: hash
 			}).save();
 		}).then(function (model) {
-			return res.json({token: model.generateJWT(), user: model.toJSON()});
+			return res.json({token: model.generateJWT(user)});
 		}).catch(function(ex) {
 			console.log(ex.stack);
 		});
