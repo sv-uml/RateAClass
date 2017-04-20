@@ -114,6 +114,7 @@ body.login_body div.global-container > div.container { height: 100%; margin-top:
 body.login_body footer { margin-top: -62px; }
 
 header.header .links input.search-global { background: url('/images/icon-search.png') no-repeat; background-position: 0 center; background-size: 26px; border-color: #ddd; display: inline-block; padding-left: 30px; width: 130px; }
+header.header .links input.search-global.focus { margin-left: 20px; width: calc(100% - 20px); }
 
 header.header a {
   color: inherit;

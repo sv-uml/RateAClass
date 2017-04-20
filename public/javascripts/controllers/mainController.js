@@ -31,7 +31,6 @@
             $("#searchschool").detach().prependTo($("form#search-school"));
             $("#searchschool").removeClass("header-search");
             $rootScope.rootPage = false;
-            console.log($rootScope.rootPage);
             $("input.search-global").show();
             $("a.section").show();
         });
