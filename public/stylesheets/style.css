@@ -338,6 +338,10 @@ footer {
 
 body.login_body footer { color: #dddddd; }
 
+
+body.review_body div.global-container { min-height: auto; height: auto; position: static; }
+body.review_body footer { position: static; }
+
 .invalid input:required:invalid {
     background: #BE4C54;
 }

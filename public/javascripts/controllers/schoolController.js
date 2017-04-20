@@ -72,6 +72,7 @@
 			$scope.review = {};
 			$scope.rating_num = 0;
 			$scope.isLoggedIn = authService.isLoggedIn();
+			$rootScope.appBodyClass = 'review_body';
 			if ($state.is('review')) {
 				$scope.class_id = $stateParams.unique;
 				$scope.reviews = mainService.reviews;
