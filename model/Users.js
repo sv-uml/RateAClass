@@ -26,7 +26,7 @@ var User = bookshelf.Model.extend({
     exp.setDate(today.getDate() + 60);
 
     return jwt.sign({
-      _id: user.id,
+      _id: user.attributes.id,
       name: user.attributes.name,
       exp: parseInt(exp.getTime() / 1000),
     }, '0010');

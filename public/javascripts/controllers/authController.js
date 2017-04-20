@@ -48,7 +48,6 @@ app.controller('AuthCtrl', [
 		$scope.register = function(){
 			authService.register($scope.user).error(function(error) {
 				$scope.error = error;
-				console.log(error);
 			}).then(function() {
 				$window.location.href = "/home";
 			});
