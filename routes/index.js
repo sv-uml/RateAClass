@@ -5,10 +5,11 @@ var passport = require("passport");
 var School = require('../model/School');
 var Class = require('../model/Class');
 var User = require('../model/Users');
+var Review = require('../model/Review');
+var bookshelf = require('../config/bookshelf');
 
 router.get('/search/school/:name', function (req, res, next) {
 	var school = req.params.name;
-
 	School.query(function (q) { 
 		q.where('name', 'LIKE', '%' + school + '%');
 	}).fetchAll().then(function (schools) {
@@ -44,7 +45,16 @@ router.get('/school/:unique', function (req, res, next) {
 		console.log(err);
 		res.send('An error occured');
 	});
+});
 
+router.get('/reviews/:course', function (req, res, next) {
+	var course = req.params.course;
+	bookshelf.knex.raw("SELECT r.id, r.review, r.usr, r.school, r.datetime, c.name as title, c.rating, s.name, s.location FROM reviews r, class c, school s WHERE c.id = ? AND r.school = s.unique_str AND r.class = c.id", course).then(function (data) {
+		res.json(data[0]);
+	}).catch(function (err) {
+		console.log(err);
+		res.send('An error occured');
+	});
 });
 
 

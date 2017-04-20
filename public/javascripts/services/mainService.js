@@ -8,7 +8,8 @@
 		    data: [],
 		    schools: [],
 		    school: [],
-		    classes: []
+		    classes: [],
+			reviews: []
 		};
 		// save token
 		main.getSchools = function(name) {
@@ -26,6 +27,12 @@
 		main.getSchool = function(unique) {
 			return $http.get('/api/school/' + unique).success(function(data) {
 				angular.copy(data, main.school);
+			});
+		}
+
+		main.getReviews = function(unique) {
+			return $http.get('/api/reviews/' + unique).success(function(data) {
+				angular.copy(data, main.reviews);
 			})
 		}
 		return main;

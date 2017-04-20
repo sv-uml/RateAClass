@@ -1,0 +1,18 @@
+<div id="container" class="container review">
+    <div class="content">
+        <div class="school-container">
+            <div class="side-bar">
+            	<div class="school-brand" style="background-image: url({{brand_asset}})"></div>
+            	<span class="school-title">{{school_name}}</span>
+            	<span class="school-address">{{school_address}}</span>
+            </div>
+            <div class="content-bar">
+            	<span class="heading">Reviews for {{reviewClass}}</span>
+            	<div class="review-container" ng-repeat="review in reviews | limitTo: 20">
+            		<span class="review-list-head">Posted on {{review.datetime}}</span>
+            		<span class="review-list-description">{{review.review}}</span>
+            	</div>
+            </div>
+        </div>
+    </div>
+</div>
