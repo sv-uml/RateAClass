@@ -42,7 +42,7 @@ app.controller('AuthCtrl', [
 	'$state', 
 	'authService',
 	function($scope, $rootScope, $state, authService) {
-		//... logic will be here...
+
 		$scope.user = {};
 		$rootScope.appBodyClass = 'login_body';
 
