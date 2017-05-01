@@ -214,8 +214,10 @@ div.addreview div.content-bar .star-rating-container > rating .star:hover {
 .review-container > div.review-info-container { border-top: 1px solid #eee; color: #666; display: table; font-size: 0.8em; margin-top: 15px; padding-top: 10px; width: 100%; }
 .review-container > div.review-info-container > span.usr { display: table-cell; }
 .review-container > div.review-info-container > span.datetime { display: table-cell; text-align: right; }
-.class-container > span.class-list-head { font-size: 1.2em; font-weight: 600; }
+.class-container > span.class-list-head { display: inline; font-size: 1.2em; font-weight: 600; }
 .class-container > span.class-list-body { font-size: 1em; font-weight: 300; }
+.class-container > span.class-list-rating { display: block; font-size: 1em; font-weight: 500; margin-top: 10px; }
+.class-container > rating { display: inline; float: right; margin-top: 5px; text-align: left; }
 .class-container > span.class-rating-head { font-size: 1em; font-weight: 300; }
 .class-container > span.class-rating-number { font-size: 1em; font-weight: 600; }
 

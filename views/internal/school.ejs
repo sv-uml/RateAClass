@@ -10,7 +10,9 @@
             	<input type="text" class="search_class" ng-model="searchclass" id="searchclass" placeholder="Type to find a class" ng-change="search()" focused />
             	<a class="class-container" ng-repeat="class in classes | filter:searchclass | limitTo: 20" href="/review/{{class.id}}">
             		<span class="class-list-head">{{class.name}}</span>
+                    <rating value="class.rating" max="5" ng-model="review.rating"></rating>
             		<span class="class-list-body">{{class.description}}</span>
+                    <span class="class-list-rating">Average Rating: {{class.rating}}</span>
             	</a>
             </div>
             <div class="side-bar">

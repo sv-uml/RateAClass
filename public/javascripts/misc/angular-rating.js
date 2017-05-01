@@ -36,7 +36,7 @@
                 model.size = '20px';
 
             if (!model.color)
-                model.color = "#F7EB90";
+                model.color = "#FDD017";
 
             if (!model.highColor)
                 model.highColor = "#F7EB90";
