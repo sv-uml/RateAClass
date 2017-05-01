@@ -3,7 +3,7 @@
 
     angular.module("angular-rating", []).component("rating", {
         template: '<span class="rating-container" ng-mouseleave="model.control_onMouseLeave()">' +
-        '<span class="star fa fa-star-o" ng-class="{\'star-on\':entry.filled, \'star-high\':entry.highlighted}"' +
+        '<span class="star fa fa-star" ng-class="{\'star-on\':entry.filled, \'star-high\':entry.highlighted}"' +
         'ng-mouseover="model.onMouseOver($index)"' +
         'ng-mouseleave="model.onMouseLeave($index)"' +
         'ng-click="model.onClick($index)"' +
@@ -210,7 +210,7 @@
                 ]
             }
             var star = {
-                selector: '.star',
+                selector: '.star.fa-star',
                 rules: [
                     'font-size: 18px',
                     'color: #ddd',
@@ -224,13 +224,13 @@
                 ]
             }
             var starOn = {
-                selector: '.star.star-on',
+                selector: '.star.star-on.fa-star',
                 rules: [
                     'color:' + model.color
                 ]
             }
             var starHigh = {
-                selector: '.star.star-high',
+                selector: '.star.star-high.fa-star',
                 rules: [
                     'color:' + model.highColor
                 ]

@@ -103,6 +103,12 @@ form.start-box button {
 }
 button:hover { background-color: #222224; }
 
+.star.fa-star {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #F7EB90;
+  color: #fff;
+}
+
 div.error-head { display: block; height: 40px; line-height: 40px; font-size: 15px; background-color: #f7ea51; text-align: center; }
 
 header.header { background-color: #fff; border-bottom: 1px solid #ddd; -webkit-box-shadow: 0px 3px 5px 0px rgba(238,238,238,0.5); -moz-box-shadow: 0px 3px 5px 0px rgba(238,238,238,0.5); box-shadow: 0px 3px 5px 0px rgba(238,238,238,0.5); color: #3D3D3F; font-size: 16px; height: 50px; position: relative; width: 100%; z-index: 1; }
@@ -351,6 +357,32 @@ body.review_body footer { position: static; }
 }
 
 @media (max-width: 600px) {
+  header.header { position: static; }
+  div.container { width: calc(100% - 50px); }
+  div.global-container > div.container.home > div.content { margin-bottom: 1em; padding-top: 1em; }
+  div.global-container > div.container.home > div.content > .info { padding: 0; }
+  div.global-container div.container.home div.info h1 { font-size: 1.75em; }
+  div.global-container div.container.home div.action form#search-school.start-box { width: 100%; }
+  div.infographic-home { width: 100%; }
+  div.infographic-home > div.infographic-section > span.body { width: 100px; }
+  div.global-container div.container div.school-container { display: flex; flex-flow: column }
+  div.global-container div.container div.school-container > div.side-bar { align-self: auto; }
+  div.global-container div.container div.school-container > div.content-bar { align-self: auto; margin: 0; }
+
+  div.global-container div.container div.school-container > div.side-bar:nth-of-type(1) { padding: 10px; }
+  div.global-container div.container div.school-container > div.side-bar:nth-of-type(1) > div.school-brand { float: left; height: 60px; width: 60px; }
+  div.global-container div.container div.school-container > div.side-bar:nth-of-type(1) > span.school-title { display: inline-block; margin-top: 0; vertical-align: top; }
+  div.global-container div.container div.school-container > div.side-bar:nth-of-type(1) > span.school-address { display: inline-block; vertical-align: top; }
+
+  body.login_body header.header .links { display: none; }
+  body.login_body div.global-container { margin-top: auto; }
+  body.login_body div.global-container > div.container { display: block; position: static; }
+  div.global-container div.container.login div.content { display: block; min-width: 0; padding: 20px 25px; }
+  div.global-container div.container.login div.side-banner { display: none; }
+
+  footer { position: static; }
+
+
   div.global-container div.info { padding: 0 20px; }
   div.global-container div.action form.start-box { width: 100%; }
 }
