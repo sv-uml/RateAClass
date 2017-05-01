@@ -173,6 +173,7 @@ div.global-container div.container.search:before { -webkit-filter: blur(20px); f
 div.global-container div.container div.school-container { display: flex; margin-top: 20px; width: 100%; }
 div.global-container div.container div.school-container > div.side-bar { min-width: 250px; }
 div.global-container div.container div.school-container > div.side-bar > span { display: block; font-weight: 700; padding: 10px; }
+div.global-container div.container div.school-container > div.side-bar > span.avg_rating { font-weight: 300; text-align: center; }
 div.global-container div.container div.school-container > div.content-bar { margin: 0 10px; width: 100%; }
 div.global-container div.container div.school-container > div.side-bar, div.global-container div.container div.school-container > div.content-bar { align-self: flex-start; background-color: #fff;  border: 1px solid rgba(240,240,240,1); -webkit-box-shadow: 0px 0px 5px 0px rgba(221,235,240,0.75); -moz-box-shadow: 0px 0px 5px 0px rgba(221,235,240,0.75); box-shadow: 0px 0px 5px 0px rgba(221,235,240,0.75); }
 div.global-container div.container div.school-container > div.side-bar div.school-brand { background-repeat: no-repeat; background-position: center; background-size: contain; border: 5px solid rgba(90, 129, 142, 0.78); border-radius: 100%; height: 100px; margin: 0 auto; margin-top: 10px; width: 100px; }

@@ -82,6 +82,8 @@
 				$scope.school_name = $scope.reviews[0].name;
 				$scope.school_address = $scope.reviews[0].location;
 				$scope.user_id = authService.currentUserId();
+				$scope.avg_rating = $scope.reviews[0].rating;
+				$scope.rating_num = $scope.avg_rating;
 			}
 			else if ($state.is('addreview')) {
 				$scope.school_str = $stateParams.unique;

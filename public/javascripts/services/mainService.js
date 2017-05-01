@@ -33,6 +33,7 @@
 
 		main.getReviews = function(unique) {
 			return $http.get('/api/reviews/' + unique).success(function(data) {
+				console.log(data);
 				angular.copy(data, main.reviews);
 			});
 		}

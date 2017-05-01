@@ -54,6 +54,7 @@ router.get('/reviews/:course', function (req, res, next) {
 	bookshelf.knex.raw("SELECT r.id, r.review, r.usr, r.school, r.datetime, c.name as title, c.rating, s.name, s.location, u.name as username FROM reviews r, class c, users u, school s WHERE r.class = c.id AND c.id = ? AND u.id = r.usr AND s.unique_str = r.school;", course).then(function (data) {
 		if (data[0].length == 0) {
 		    Class.query({ where: { id: course } }).fetch().then(function (classItem) {
+		    	console.log(classItem.school);
 				res.json({school: classItem.school });
 			}).catch(function (err) {
 				console.log(err);

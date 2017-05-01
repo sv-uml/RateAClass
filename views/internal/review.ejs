@@ -7,6 +7,8 @@
             	<span class="school-address">{{school_address}}</span>
                 <a class="school-reviews" href="/school/{{school_str}}"><i class="fa fa-arrow-left"></i> Back to all reviews</a>
                 <a class="button" href="/review/{{class_id}}/add"><i class="fa fa-plus"></i> Add a review</a>
+                <span class="avg_rating">Average Rating: {{avg_rating}}</span>
+                <rating value="rating_num" max="5" ng-model="review.rating_num"></rating>
             </div>
             <div class="content-bar">
             	<span class="heading">Reviews for {{reviewClass}}</span>
