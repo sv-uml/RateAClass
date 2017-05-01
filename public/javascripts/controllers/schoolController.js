@@ -52,7 +52,7 @@
                         return mainService.getClass($stateParams.id);
                     }]
                 },
-				onEnter: ['$state', 'authService', function($state, authService) {
+				onEnter: ['$state', 'authService', '$window', function($state, authService, $window) {
 					if(!authService.isLoggedIn() ) {
 						$window.location.href = "/login";
 					}
