@@ -183,6 +183,7 @@ div.global-container div.container div.school-container > div.side-bar a.school-
 div.global-container div.container div.school-container > div.side-bar a.button { background: transparent; border-color: #333; color: #333; display: block; margin: 10px auto; margin-top: 20px; width: 135px; }
 div.global-container div.container div.school-container > div.side-bar a.button:hover { background: #eaeaea; }
 
+div.content-bar > .no-class-review { padding: 10px; }
 div.content-bar input.search_class { margin: 10px; width: calc(100% - 20px); }
 div.content-bar .heading { display: block; font-size: 1em; font-weight: 600; padding: 10px; }
 div.content-bar .heading > span { font-weight: 300; }

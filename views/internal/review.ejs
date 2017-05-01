@@ -12,6 +12,7 @@
             </div>
             <div class="content-bar">
             	<span class="heading">Reviews for {{reviewClass}}</span>
+                <span ng-show="{{reviews[0].id == null}}" class="no-class-review">No one has reviewed this class yet. <a href="/review/{{class_id}}/add">Become the first to write a review</a></span>
             	<div class="review-container" ng-class="review.usr==user_id?'userReview':''" ng-repeat="review in reviews | limitTo: 20 | orderBy: review.datetime : true">
             		<span class="review-list-body">{{review.review}}</span>
                     <div class="review-info-container">

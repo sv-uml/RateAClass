@@ -77,6 +77,7 @@
 				$scope.class_id = $stateParams.unique;
 				$scope.reviews = mainService.reviews;
 				$scope.reviewClass = $scope.reviews[0].title;
+				console.log($scope.reviews);
 				$scope.school_str = $scope.reviews[0].school;
 				$scope.brand_asset = "/images/schools/" + $scope.school_str + ".png";
 				$scope.school_name = $scope.reviews[0].name;

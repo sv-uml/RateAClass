@@ -53,15 +53,16 @@ router.get('/reviews/:course', function (req, res, next) {
 	var course = req.params.course;
 	bookshelf.knex.raw("SELECT r.id, r.review, r.usr, r.school, r.datetime, c.name as title, c.rating, s.name, s.location, u.name as username FROM reviews r, class c, users u, school s WHERE r.class = c.id AND c.id = ? AND u.id = r.usr AND s.unique_str = r.school;", course).then(function (data) {
 		if (data[0].length == 0) {
-		    Class.query({ where: { id: course } }).fetch().then(function (classItem) {
-		    	console.log(classItem.school);
-				res.json({school: classItem.school });
+			bookshelf.knex.raw("SELECT c.name as title, c.rating, s.name, s.location, s.unique_str as school FROM class c, school s WHERE c.id = ? AND s.unique_str = c.school", course).then(function (data) {
+				console.log(data[0]);
+				res.json(data[0]);
 			}).catch(function (err) {
 				console.log(err);
 				res.send('An error occured');
 			});
 		}
-		res.json(data[0]);
+		else
+			res.json(data[0]);
 	}).catch(function (err) {
 		console.log(err);
 		res.send('An error occured');
