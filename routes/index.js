@@ -85,7 +85,7 @@ router.post('/review/post', auth, function(req, res, next) {
 		var datetime = Math.floor(Date.now() / 1000);
 		new Review({
 			review: req.body.text,
-			usr: req.body.user,
+			username: req.body.username,
 			school: req.body.school,
 			class: req.body.class_id,
 			rating: req.body.rating,
