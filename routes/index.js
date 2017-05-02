@@ -95,7 +95,15 @@ router.post('/review/post', auth, function(req, res, next) {
 			if (model === null) {
 				res.json({ message: "Error" });
 			} else {
-				res.json({message: "Success"})
+				bookshelf.knex.raw("SELECT AVG(rating) as average FROM reviews where class = ?", req.body.class_id).then(function (data) {
+					var rating = JSON.parse(JSON.stringify(data[0][0])).average;
+					new Class({id: req.body.class_id}).save({rating: rating}, {patch: true}).then(function(model) {
+						res.json({message: "Success"});
+					});
+				}).catch(function (err) {
+					console.log(err);
+					res.send('An error occured');
+				});
 			}
 		}).catch(function(ex) {
 			console.log(ex.stack);
