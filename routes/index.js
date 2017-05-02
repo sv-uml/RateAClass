@@ -51,7 +51,7 @@ router.get('/school/:unique', function (req, res, next) {
 
 router.get('/reviews/:course', function (req, res, next) {
 	var course = req.params.course;
-	bookshelf.knex.raw("SELECT r.id, r.review, r.usr, r.school, r.datetime, c.name as title, c.rating, s.name, s.location, u.name as username FROM reviews r, class c, users u, school s WHERE r.class = c.id AND c.id = ? AND u.id = r.usr AND s.unique_str = r.school;", course).then(function (data) {
+	bookshelf.knex.raw("SELECT r.id, r.review, r.usr, r.school, r.datetime, r.rating as score, c.name as title, c.rating, s.name, s.location, u.name as username FROM reviews r, class c, users u, school s WHERE r.class = c.id AND c.id = ? AND u.id = r.usr AND s.unique_str = r.school;", course).then(function (data) {
 		if (data[0].length == 0) {
 			bookshelf.knex.raw("SELECT c.name as title, c.rating, s.name, s.location, s.unique_str as school FROM class c, school s WHERE c.id = ? AND s.unique_str = c.school", course).then(function (data) {
 				console.log(data[0]);
@@ -85,10 +85,11 @@ router.post('/review/post', auth, function(req, res, next) {
 		var datetime = Math.floor(Date.now() / 1000);
 		new Review({
 			review: req.body.text,
-			usr: req.body.user,
+			username: req.body.username,
 			school: req.body.school,
 			class: req.body.class_id,
 			rating: req.body.rating,
+			score: req.body.score,
 			datetime: datetime
 		}).save()
 		.then(function (model) {
